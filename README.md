@@ -1,3 +1,37 @@
+
+<!-- TOC -->
+
+- [Instacart Market Basket Analysis](#instacart-market-basket-analysis)
+  - [Project Overview](#project-overview)
+  - [Business Objective](#business-objective)
+    - [Predicting Repeat Purchases](#predicting-repeat-purchases)
+  - [Dataset Description](#dataset-description)
+    - [Dataset Components](#dataset-components)
+  - [Prerequisites](#prerequisites)
+    - [Tools and Environment](#tools-and-environment)
+    - [Essential Libraries](#essential-libraries)
+  - [Exploratory Data Analysis](#exploratory-data-analysis)
+    - [Order Frequency](#order-frequency)
+    - [Most Ordered and Reordered Products](#most-ordered-and-reordered-products)
+    - [Order Timing](#order-timing)
+    - [Order Composition](#order-composition)
+    - [Product Distribution by Department and Aisle](#product-distribution-by-department-and-aisle)
+  - [Data Preparation](#data-preparation)
+    - [Feature Engineering](#feature-engineering)
+  - [Final Dataset](#final-dataset)
+    - [Reducing Dataset Size](#reducing-dataset-size)
+    - [Train-Test Split](#train-test-split)
+  - [Model Building](#model-building)
+    - [Model Performance](#model-performance)
+      - [Model ROC AUC Scores](#model-roc-auc-scores)
+    - [Models Analysis](#models-analysis)
+    - [Best Models](#best-models)
+  - [Conclusion](#conclusion)
+    - [Feature Importance](#feature-importance)
+  - [Next Steps](#next-steps)
+
+<!-- /TOC -->
+
 # Instacart Market Basket Analysis
 
 **Dataset Reference:** [Kaggle: Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis)
@@ -160,13 +194,7 @@ Final model performance and analysis to be detailed after testing and validation
 | GradientBoosting CV F1 | 76.70          | 93.97               | 89.91             | 40.24            | 14.03           | 96.95               | 46.40              | 56.88        | 21.54       | 70.05             | 56.13            | 2.172278         | 3.637199        |
 | AdaBoost CV F1         | 73.12          | 95.28               | 89.21             | 56.93            | 16.08           | 92.34               | 38.81              | 70.44        | 22.74       | 78.21             | 56.65            | 1.701033         | 3.889829        |
 
-#### ROC Curve
-
-![ROC Curve](/images/roc_curve.png)
-
 #### Model ROC AUC Scores
-
-# Model ROC AUC Scores
 
 | Model                  | ROC AUC Score |
 |------------------------|---------------|
@@ -191,8 +219,8 @@ Below are the performance metrics presented in bar plots for all the models:
 ### Models Analysis
 
 ![Training time](/images/models_comp_by_train_time.png)
-![Accuracy](/images/models_comp_by_test_accuracy.png)
-![F1 Score](/images/models_comp_by_test_f1.png)
+![Accuracy](/images/models_comp_by_test_accuracy_.png)
+![F1 Score](/images/models_comp_by_test_f1_.png)
 
 **Overfitting Models:**
 Several models, including DecisionTree, AdaBoost, and KNN CV F1, show signs of significant overfitting. These models achieve 100% accuracy on the training data, with perfect scores in recall, precision, and F1 metrics. However, their test performance drops considerably, indicating that they may not generalize well to unseen data. For example, DecisionTree and AdaBoost both have test accuracies around 83-85%, with Test Recall and Test Precision dropping drastically.

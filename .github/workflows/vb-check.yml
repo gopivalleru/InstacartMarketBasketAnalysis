@@ -2,7 +2,7 @@ name: VB Monitor
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/20 16-23,0-2 * * *"
   workflow_dispatch:
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
 
           echo "HTTP status: $STATUS"
 
-          if [ "$STATUS" = "404" ]; then
+          if [ "$STATUS" = "200" ]; then
             curl -s \
               --form-string "token=${{ secrets.PUSHOVER_TOKEN }}" \
               --form-string "user=${{ secrets.PUSHOVER_USER }}" \

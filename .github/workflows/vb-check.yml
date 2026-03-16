@@ -2,7 +2,7 @@ name: VB Monitor
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check visa bulletin page
+      - name: Check VB page
         run: |
           URL="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2026/visa-bulletin-for-april-2026.html"
 
@@ -18,7 +18,7 @@ jobs:
 
           echo "HTTP status: $STATUS"
 
-          if [ "$STATUS" = "200" ]; then
+          if [ "$STATUS" = "404" ]; then
             curl -s \
               --form-string "token=${{ secrets.PUSHOVER_TOKEN }}" \
               --form-string "user=${{ secrets.PUSHOVER_USER }}" \
